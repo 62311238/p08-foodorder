@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-31j">
+<title>アカウント新規登録</title>
+</head>
+<body>
+	<h1>アカウント新規登録</h1>
+	<a href="login.html">ログイン</a>
+<form action="new_check.php" method="post">
+<table>
+
+<tr>
+<td>ユーザID</td>
+<td><input type="text" name="uid""value=""/></td>
+</tr>
+
+<tr>
+<td>パスワード</td>
+<td><input type="password" name="upass""value=""/></td>
+</tr>
+
+<tr>
+<td>確認パスワード</td>
+<td><input type="password" name="confirm"/></td>
+</tr>
+
+<tr>
+<td>種別</td>
+<td><input type="radio" name="urole" value="1"/>顧客</td>
+<td><input type="radio" name="urole" value="2"/>会社</td>
+</tr>
+
+</table>
+<input type="submit" value="登録"><input type="reset" value="取消">
+</form>
+</body>
+</html>
