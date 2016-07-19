@@ -1,15 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title></title>
-</head>
-<body>
-<br><a href="customer.php">顧客トップに戻る</a>
-<br>
-
 <?php
-include('db_inc.php');
+include('page_header.php');  //画面出力開始
+require_once('db_inc.php');  //データベース接続
 
 
 $where = '1';
@@ -104,7 +95,7 @@ $row= mysql_fetch_array($rs);
 
 //echo '<h3>野菜のおかず</h3>';
 //echo '<form action="cart.php" method="post">';
-echo '<table border=1 width=80%>';
+echo '<table class="table table-hover">';
 echo '<tr><th>料理</th><th>詳細</th><th>選択</th></tr>';
 
 while ($row) {
@@ -139,9 +130,6 @@ while ($row) {
 }
 
 echo '<table>';
-//echo '<input type="submit" value="カートに入れる">';
-//echo '<input type="reset" value="取消">';
 
-//echo '</form>';
-
+include('page_footer.php');  //画面出力終了
 ?>

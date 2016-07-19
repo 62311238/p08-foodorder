@@ -33,7 +33,7 @@ if ($row){
 
 <body>
 <br>
-<a href="recipes.php">注文を続ける</a>｜
+<a href="local_search.php">注文を続ける</a>｜
 <a href="order.php">レジへ進む</a>
 
 <?php
@@ -108,5 +108,5 @@ function changeQty($from, $to, $sel){
 }
 ?>
 
-<a href="recipes.php">注文を続ける</a>｜
+<a href="local_search.php">注文を続ける</a>｜
 <a href="order.php">レジへ進む</a>

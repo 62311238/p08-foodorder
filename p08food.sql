@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- ホスト: localhost
--- 生成時間: 2016 年 1 月 28 日 01:55
+-- 生成時間: 2016 年 7 月 19 日 04:45
 -- サーバのバージョン: 5.5.8
 -- PHP のバージョン: 5.3.5
 
@@ -16,7 +16,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 /*!40101 SET NAMES utf8 */;
 
 --
--- データベース: `pbs12jk053db`
+-- データベース: `p08food`
 --
 
 -- --------------------------------------------------------
@@ -753,6 +753,70 @@ INSERT INTO `tb_customer` (`cname`, `csex`, `cbirth`, `ctel`, `caddnum`, `caddre
 -- --------------------------------------------------------
 
 --
+-- テーブルの構造 `tb_foodstuffs`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_foodstuffs` (
+  `fid` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `fname` varchar(128) NOT NULL,
+  `detail` text NOT NULL,
+  `season` int(11) NOT NULL,
+  `lid` int(11) NOT NULL,
+  UNIQUE KEY `fid` (`fid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
+
+--
+-- テーブルのデータをダンプしています `tb_foodstuffs`
+--
+
+INSERT INTO `tb_foodstuffs` (`fid`, `fname`, `detail`, `season`, `lid`) VALUES
+(1, ' うなぎ', 'ウナギ（鰻[2]、うなぎ）とは、ウナギ科(Anguillidae) ウナギ属(Anguilla) に属する魚類の総称である。世界中の熱帯から温帯にかけて分布するニホンウナギ・オオウナギ・ヨーロッパウナギ・アメリカウナギなど18種がある。フウセンウナギ・デンキウナギ・タウナギなど、外見は細長い体型をしていてウナギに似ているものには、別のグループでもこの名を持つものがある。また、ヤツメウナギ・ヌタウナギは硬骨魚類ですらなく、原始的な無顎魚類（円口類）に分類される。食用にされ、日本では蒲焼や鰻丼などの調理方法が考案されて、古くから食文化に深い関わりを持つ魚である。漁業・養殖共に広く行われてきたが、近年は国外からの輸入が増えている。', 2, 1),
+(2, 'あしやんいか', 'あしやんいかは福岡県遠賀郡芦屋町で水揚げされたやりいか（ケンサキイカ）の地域ブランド。2001年（平成13年）に芦屋町が地元の漁港に水揚げされるやりいかの名前を募集した。同町沖の響灘は西日本有数のやりいかの漁場である。同年に当時地元の小学校4年生だった児童が応募した名前が採用された。身は柔らかな食感で、味も甘味があっておいしいとして売り出されている[2]。刺身に向いている[3]。', 2, 1),
+(3, 'かんぱち ', 'カンパチ（間八、勘八、学名 Serioladumerili ）は、スズキ目アジ科に分類される海水魚の一種。全世界の暖海域に分布する大型肉食魚で、日本では高級魚として扱われる。', 2, 2),
+(4, 'マダコ', 'マダコ（真蛸、Octopus vulgaris）は、タコ目・マダコ科に属するタコの一種。世界各地の熱帯・温帯海域に広く分布し、日本では一般にタコといえば本種を指すことが多い。', 3, 2),
+(5, 'マグロ', 'マグロ（鮪）は、サバ科マグロ属（学名：Thunnus）に分類される硬骨魚類の総称。 暖海性で外洋性、回遊性の大型肉食魚で、日本を始めとする世界各地で重要な食用魚として漁獲されている。', 1, 3),
+(6, 'きじ', 'キジ（雉子、雉）は、キジ目キジ科キジ属に分類される鳥類。日本産の個体群のみで独立種P. versicolorとする説と、ユーラシア大陸に分布するコウライキジP. colchicusの亜種とする説があり後者の説に従うとP. colchicusの和名がキジとなり本種のみでキジ属を構成する[6]。日本鳥学会などでは2012年現在、Clements Checklistでは2015年現在は後者（キジは日本やユーラシア大陸広域に分布する単一種）の説を採用している[6][7]。以下の内容はIOC World Bird ListおよびBirdlifeInternatinal（IUCN）などが2015年現在に採用している前者の説（キジは日本にのみ分布する独立種）に従ったものと思われる', 3, 3),
+(7, '赤なす', 'ナス（茄子、茄、ナスビ、学名：Solanum melongena）はナス科ナス属の植物。また、その果実のこと。', 1, 4),
+(8, 'クルマエビ', '天草地方では夏になると、クルマエビが旬を迎える。20cmほどに育ったクルマエビは上品な甘味と旨味が特徴で、踊り食いをはじめ、刺身でも天ぷらでもボイルしても美味。火を通すとプリプリ感が口いっぱいに弾け、生で食べると甘味がのどへとろけていく。', 4, 4),
+(9, 'ムツゴロウ', 'ムツゴロウ（?五郎、学名 Boleophthalmus pectinirostris ）は、スズキ目・ハゼ科に属する魚の一種。潮が引いた干潟の上で生活する魚として知られ、有明海・八代海を含む東アジアに分布する。有明海沿岸ではムツ、ホンムツなどと呼ばれる。', 2, 5),
+(10, 'タイラギ', 'タイラギ（玉?）Atrina pectinata は、イガイ目・ハボウキガイ科に属する二枚貝の一種である。内湾の砂泥底に生息する大型の二枚貝で、重要な食用種である。標準和名のタイラギは「平貝」が転訛したものであり[1]、マスコミなどで「タイラギ貝」と表記されることがあるが、これは重言である[要検証 ? ノート]。季語、三冬。', 4, 5),
+(11, '豚肉', '信州の伊那谷にあるハヤシファームの幻の豚は、正確に言うと“中ヨークシャー種系”である。', 2, 1),
+(12, '生姜', 'ショウガ（生姜、生薑、薑。学名は Zingiber officinale）はショウガ科の多年草であり、野菜として食材に、また生薬として利用される。', 3, 1),
+(13, '鶏肉', '鶏肉（とりにく、けいにく）とは、キジ科のニワトリの食肉のこと。', 1, 2),
+(14, 'キャベツ', 'キャベツ（英語：Cabbage、Brassica oleracea var. capitata）、アブラナ科アブラナ属の多年草。野菜として広く利用され、栽培上は一年生植物として扱われる。', 3, 2),
+(15, '牛肉', '牛肉（ぎゅうにく）は、ウシの肉である。 ビーフ（英: Beef 欧米ではBeefは仔牛肉(Veal)とは別の概念である[1]）ともいう。', 1, 3),
+(16, 'キノコ', 'キノコ（茸、菌、蕈）とは、菌類のうちで比較的大型の子実体を形成するもの、あるいはその子実体そのものをいう俗称で厳密な定義があるわけではないが、植物とは明確に異なる。', 3, 3),
+(17, 'カレー', 'カレーまたはカリー（英: curry, タミル語: ??? ka?i）は、多種類の香辛料を併用して食材を味付けするというインド料理の特徴的な調理法を用いた料理に対し、欧米人が名付けた呼称。転じて、それを元にしたヨーロッパ系の料理や、同様に多種の香辛料を併用して味付けされる東南アジアなど[1]の料理も指す。', 1, 5),
+(18, 'ライス', '英語で米（作物としての稲、食品としての飯を含む）の意。日本でも外食産業では飯をライスと呼ぶことが多く、カレーライスのように料理名として定着したものもある。 ', 3, 5);
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `tb_local`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_local` (
+  `lid` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `lname` varchar(128) NOT NULL,
+  `feature` text NOT NULL,
+  `zipcode` varchar(32) NOT NULL,
+  UNIQUE KEY `lid` (`lid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- テーブルのデータをダンプしています `tb_local`
+--
+
+INSERT INTO `tb_local` (`lid`, `lname`, `feature`, `zipcode`) VALUES
+(1, '福岡地区', '福岡市、北九州市の2つの政令指定都市を持つ福岡県の人口は、平成26年11月1日現在509万3,885人（推計）です。また、福岡県には28市、30町、2村があり、これら60市町村（平成24年4月1日現在）は地理的、歴史的、経済的特性などから、「北九州」「福岡」「筑後」「筑豊」の4地域に分けられています。    ', '810-0000'),
+(2, '鹿児島地区', '九州南部に位置する日本の都道府県である。九州島の南側には離島（薩南諸島）が点在する[1]。九州島の部分は県本土と表現され、2つの半島（薩摩半島・大隅半島）を有する。南北の距離は600km、海岸線は2,722kmに及ぶ。県庁所在地は鹿児島市。世界遺産の屋久島や、種子島宇宙センター、霧島山などがあり、自然・文化・観光・産業などの面において、豊富な資源を有している。', '819-0000'),
+(3, '宮崎地区', '宮崎県（みやざきけん）は九州南東部に位置する日本の県。県庁所在地は宮崎市。県木「フェニックス」に代表される南国情緒豊かな気候から、1960年代には日南地区を中心とした新婚旅行のメッカだった。現在も春季のプロ野球などのキャンプ地として知られる。', '880-0000'),
+(4, '熊本地区', '熊本県（くまもとけん）は、九州地方の中央に位置する県である。県庁所在地は熊本市（政令指定都市）。令制国の肥後国に当たる。有明海、不知火海、東シナ海に面していて、また日本第2位の阿蘇カルデラを持つ阿蘇山が知られる。', '861-0000'),
+(5, '佐賀地区', '佐賀県（さがけん）は、日本の九州地方の北西部にある県。県庁所在地は佐賀市。唐津・伊万里・有田などは古くから陶磁器の産地として有名である。玄界灘と有明海の2つの海に接する。令制国の肥前国東部に相当する。明治の府県制成立の際、同国は佐賀県と長崎県の2県として分立した。県名は佐賀郡（現在の佐賀市）から採られたもので、『肥前国風土記』に伝えられる、楠の木が生え盛るこの地を指して日本武尊が言った「栄の国」に由来する。', '848-0000');
+
+-- --------------------------------------------------------
+
+--
 -- テーブルの構造 `tb_order`
 --
 
@@ -769,14 +833,15 @@ CREATE TABLE IF NOT EXISTS `tb_order` (
   `sid` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`oid`),
   UNIQUE KEY `oid` (`oid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT AUTO_INCREMENT=3 ;
 
 --
 -- テーブルのデータをダンプしています `tb_order`
 --
 
 INSERT INTO `tb_order` (`oid`, `uid`, `otel`, `odatetime`, `ddate`, `dtime1`, `dtime2`, `oaddress`, `omemo`, `sid`) VALUES
-(1, 'gondo', '333-1111-1111', '2015-12-03 10:03:43', '2015-12-05', '03:00:00', '04:00:00', '福岡県福岡市東区', 'お願いします', 3);
+(1, 'gondo', '333-1111-1111', '2015-12-03 10:03:43', '2015-12-05', '03:00:00', '04:00:00', '福岡県福岡市東区', 'お願いします', 3),
+(2, 'admin', '', '2016-07-19 11:39:47', '0000-00-00', '00:00:00', '00:00:00', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -793,14 +858,41 @@ CREATE TABLE IF NOT EXISTS `tb_order_detail` (
   `comment` text NOT NULL,
   `commented` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   UNIQUE KEY `oid` (`odid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC AUTO_INCREMENT=3 ;
 
 --
 -- テーブルのデータをダンプしています `tb_order_detail`
 --
 
 INSERT INTO `tb_order_detail` (`odid`, `oid`, `rid`, `qty`, `memo`, `comment`, `commented`) VALUES
-(1, 1, '1001a', 1, '', '', '2015-12-03 10:02:06');
+(1, 1, '1001a', 1, '', '', '2015-12-03 10:02:06'),
+(2, 2, '1001u', 1, '', '', '2016-07-19 11:39:47');
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `tb_recipes`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_recipes` (
+  `rid` varchar(40) NOT NULL,
+  `fid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- テーブルのデータをダンプしています `tb_recipes`
+--
+
+INSERT INTO `tb_recipes` (`rid`, `fid`) VALUES
+('1001a', 11),
+('1001a', 12),
+('1001b', 13),
+('1001b', 14),
+('1001d', 15),
+('1001d', 16),
+('1001c', 15),
+('1001f', 17),
+('1001f', 18);
 
 -- --------------------------------------------------------
 
@@ -925,7 +1017,8 @@ CREATE TABLE IF NOT EXISTS `vw_order_summary` (
 -- ビュー用の構造 `vw_cart`
 --
 DROP TABLE IF EXISTS `vw_cart`;
--- 使用中(#1142 - SHOW VIEW command denied to user 'k12jk053'@'localhost' for table 'vw_cart')
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_cart` AS select `o`.`oid` AS `oid`,`o`.`uid` AS `uid`,`o`.`odatetime` AS `odatetime`,`d`.`rid` AS `rid`,`r`.`title` AS `title`,`r`.`price` AS `price`,sum(`d`.`qty`) AS `qty` from ((`tb_order_detail` `d` join `tb_order` `o`) join `recipes` `r`) where ((`o`.`sid` = 0) and (`r`.`id` = `d`.`rid`) and (`d`.`oid` = `o`.`oid`)) group by `o`.`uid`,`d`.`rid`;
 
 -- --------------------------------------------------------
 
@@ -933,7 +1026,8 @@ DROP TABLE IF EXISTS `vw_cart`;
 -- ビュー用の構造 `vw_order`
 --
 DROP TABLE IF EXISTS `vw_order`;
--- 使用中(#1142 - SHOW VIEW command denied to user 'k12jk053'@'localhost' for table 'vw_order')
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_order` AS select `o`.`oid` AS `oid`,`o`.`sid` AS `sid`,`c`.`uid` AS `uid`,`c`.`cname` AS `cname`,`o`.`odatetime` AS `odatetime`,`d`.`rid` AS `rid`,`r`.`title` AS `title`,`r`.`price` AS `price`,sum(`d`.`qty`) AS `qty` from (((`tb_order_detail` `d` join `tb_order` `o`) join `recipes` `r`) join `tb_customer` `c`) where ((`r`.`id` = `d`.`rid`) and (`d`.`oid` = `o`.`oid`) and (`c`.`uid` = `o`.`uid`)) group by `o`.`oid`,`d`.`rid`;
 
 -- --------------------------------------------------------
 
@@ -941,7 +1035,8 @@ DROP TABLE IF EXISTS `vw_order`;
 -- ビュー用の構造 `vw_order_content`
 --
 DROP TABLE IF EXISTS `vw_order_content`;
--- 使用中(#1142 - SHOW VIEW command denied to user 'k12jk053'@'localhost' for table 'vw_order_content')
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_order_content` AS select `vw_order_summary`.`sid` AS `sid`,`vw_order_summary`.`oid` AS `oid`,`vw_order_summary`.`uid` AS `uid`,`vw_order_summary`.`odatetime` AS `odatetime`,`vw_order_summary`.`cname` AS `cname`,`vw_order_summary`.`qty` AS `qty`,`vw_order_summary`.`money` AS `money`,`tb_status`.`status` AS `status`,`tb_order`.`otel` AS `otel`,`tb_order`.`ddate` AS `ddate`,`tb_order`.`dtime1` AS `dtime1`,`tb_order`.`dtime2` AS `dtime2`,`tb_order`.`oaddress` AS `oaddress`,`tb_order`.`omemo` AS `omemo` from ((`vw_order_summary` join `tb_status` on((`vw_order_summary`.`sid` = `tb_status`.`sid`))) join `tb_order` on(((`vw_order_summary`.`sid` = `tb_order`.`sid`) and (`vw_order_summary`.`oid` = `tb_order`.`oid`) and (`vw_order_summary`.`uid` = `tb_order`.`uid`) and (`vw_order_summary`.`odatetime` = `tb_order`.`odatetime`)))) order by `vw_order_summary`.`oid`;
 
 -- --------------------------------------------------------
 
@@ -949,4 +1044,5 @@ DROP TABLE IF EXISTS `vw_order_content`;
 -- ビュー用の構造 `vw_order_summary`
 --
 DROP TABLE IF EXISTS `vw_order_summary`;
--- 使用中(#1142 - SHOW VIEW command denied to user 'k12jk053'@'localhost' for table 'vw_order_summary')
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_order_summary` AS select `o`.`oid` AS `oid`,`o`.`sid` AS `sid`,`c`.`uid` AS `uid`,`c`.`cname` AS `cname`,`o`.`odatetime` AS `odatetime`,sum(`d`.`qty`) AS `qty`,sum((`d`.`qty` * `r`.`price`)) AS `money` from (((`tb_order_detail` `d` join `tb_order` `o`) join `recipes` `r`) join `tb_customer` `c`) where ((`r`.`id` = `d`.`rid`) and (`d`.`oid` = `o`.`oid`) and (`c`.`uid` = `o`.`uid`)) group by `o`.`sid`,`o`.`oid`;
